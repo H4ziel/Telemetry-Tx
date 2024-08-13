@@ -1,4 +1,4 @@
-## Telemetry System for Abutres Aerodesign
+## Telemetry System 
 
 ### The Transmitter
 
