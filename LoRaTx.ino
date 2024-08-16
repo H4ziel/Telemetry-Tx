@@ -71,7 +71,7 @@ void SetupLoRa()
 
   if (!LoRa.begin(BAND, AmplificadorDePotencia))
   {
-    ///
+    Serial.println("Possível Erro!!");
   }//end if 
 
   LoRa.setTxPower(20,RF_PACONFIG_PASELECT_PABOOST);
