@@ -46,17 +46,14 @@ void setup()
   }//end if
   bmp180.resetToDefaults();
   bmp180.setSamplingMode(BMP180MI::MODE_UHR);                                             // Setando modo ultra high resolution
-  xTaskCreate(ReadSensors,"ReadSensors",7000,NULL,3,NULL);                                // Inicialização ReadSensors, utiliza o nucleo 1 como padrão 
-  xTaskCreatePinnedToCore(SendLoraData,"SendLoraData",7000,NULL,2,NULL,0);
+  xTaskCreate(ReadSensors,"ReadSensors",8192,NULL,3,NULL);                                // Inicialização ReadSensors, utiliza o nucleo 1 como padrão 
+  xTaskCreatePinnedToCore(SendLoraData,"SendLoraData",8192,NULL,2,NULL,0);
   delay(500);
-  disableCore0WDT();                                                                      // Desabilita o Watchdog Timer do nucleo 0
-  disableCore1WDT();                                                                      // Desabilita o Watchdog Timer do nucleo 1
 }//end setup
 
 void loop() 
 {
-  //==========================
-  //---
+  vTaskDelay(50/portTICK_PERIOD_MS);
 }//end loop
 
 //==========================================================================
